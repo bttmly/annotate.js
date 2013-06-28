@@ -1,0 +1,59 @@
+(function($) {
+
+    $.fn.annotate = function( options ) {
+
+        var settings = $.extend({
+             jumpBack : true,
+             highlight : true,
+             brackets : true,
+             highlightColor : "#fff09d"
+        }, options);
+        
+        var $flags = $('[data-for-note]');
+        var $footnotes = $('');
+        var noteData = [];
+
+        for ( var i = 0; i < $flags.length; i++ ) {
+            noteData[i] = [];
+            noteData[i][0] = $flags[i].dataset.forNote;
+            noteData[i][1] = $('#' + noteData[i][0]).html();
+            $footnotes = $footnotes.add(this.find('#' + noteData[i][0]));
+        }
+        
+        for ( var l = 0; l < $footnotes.length; l++ ) {
+            var m = l + 1;
+            var prependString = settings.brackets ? "<span class='footnote-number'>[" + m + "]</span> " : "<span class='footnote-number'>" + m + "</span> ";
+            var appendString = settings.jumpBack ?  " <a href='#flag-" + m + "'>Jump back.</a>" : ""; 
+            $footnotes.filter('#' + noteData[l][0])
+                .addClass('annotate-footnote')
+                .prepend(prependString)
+                .append(appendString)
+                .appendTo(this);
+            $flags.eq(l)
+                .attr('id', 'flag-' + m)
+                .addClass('annotate-flag')
+                .html('<a href="#' + noteData[l][0] + '">' + m + '</a>');
+        }
+        
+        if ( settings.highlight ) {
+            $('.annotate-flag').click(function() {
+                var $target = $('#' + $(this).attr('data-for-note'));
+                $target.css({
+                    'transition' : 'background-color .2s ease',
+                    'background-color': settings.highlightColor
+                    });
+                setTimeout(fadeAway, 500);
+                function fadeAway() {
+                    $target.css({
+                        'transition': 'background-color 2s ease',
+                    }).removeAttr('style');
+                }
+            });        
+        }
+        
+        return this;
+    }
+
+}(jQuery));
+
+                

@@ -1,0 +1,184 @@
+html, body, h1, h2, h3, h4, h5, h6, header, footer, article, section, div, p, blockquote, ul, ol, li, hr {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+*, *:after, *:before {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    font-size: 125%;
+}
+
+body {
+    font-family: linden-hill, serif;
+    padding: 1em;
+    color: #333;
+}
+
+header, section {
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #999;
+}
+
+header > :last-child, section > :last-child {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+h1 {
+    font-size: 4em
+}
+
+h1 sup {
+    font-size: .5em;
+}
+
+h2, h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+hr {
+    height: 1px;
+    margin-bottom: 2rem;
+    font-size: 0;
+    border: none;
+    background: #333;
+}
+
+p {
+    margin-bottom: 1em;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+a {
+    color: orangered;
+}
+
+pre {
+    white-space: pre-wrap;
+    background: #fafafa;
+    border: 1px solid #999;
+    padding: 1em;
+    border-radius: 4px;
+}
+
+
+code {
+    border-radius: 2px;
+    padding: .15em .25em;
+    border: 1px solid #bbb;
+    background: #fafafa;
+}
+
+.fn-link {
+    font-size: .6em;
+}
+
+.fn-link a {
+    text-decoration: none;
+}
+
+.column {
+    width: 35rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.mono {
+    font-family: monospace;
+}
+
+.subhead {
+    color: #999;
+    font-size: 1.5em;
+}
+
+#info {
+    font-family: sans-serif;
+}
+
+li {
+    margin-bottom: 1em;
+    position: relative;
+    transition: background-color 2s ease-out;
+}
+
+#run-annotate {
+    display: block;
+    margin: 1em auto;
+    font-size: 1rem;
+    padding: 1em;
+    background: #e63e00;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+
+#run-annotate:not(:disabled):active {
+    background: #cc3700;
+}
+
+#run-annotate:disabled {
+    background: #999;
+    cursor: default;
+}
+
+#footnotes {
+  /*counter-reset: footnote;*/
+  list-style-type: none;
+}
+/*#footnotes li:before {*/
+/*  counter-increment: footnote;*/
+/*  content: "[" counter(footnote, decimal) "]";*/
+/*  position: absolute;*/
+/*  left: -2em;*/
+/*  font-weight: bold;*/
+/*  }*/
+
+.footnote-number {
+    position: absolute;
+    left: -1.5em;
+}
+
+.magic {
+    position: relative;
+}
+
+.annotate-flag a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.fn-target {
+    background-color: #fff09d;
+}
+
+/*#second:hover .magic:after {*/
+/*    position: absolute;*/
+/*    left: calc(50%-5em);*/
+/*    left: -webkit-calc(50%-5em);*/
+/*    width: 10em;*/
+/*    content: "Here's where the magic happens!";*/
+/*    padding: 1em;*/
+/*    background: rgba(0,0,0,.75);*/
+/*    color: white;*/
+/*}*/
+  
+/*#footnotes{counter-reset: footnote; list-style-type: none;}#footnotes li:before {counter-increment: footnote;content: "[" counter(footnote, decimal) "]";position: absolute;left: -2em;font-weight: bold;}*/
+
