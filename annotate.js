@@ -22,17 +22,18 @@
         
         for ( var l = 0; l < $footnotes.length; l++ ) {
             var m = l + 1;
-            var prependString = settings.brackets ? "<span class='footnote-number'>[" + m + "]</span> " : "<span class='footnote-number'>" + m + "</span> ";
-            var appendString = settings.jumpBack ?  " <a href='#flag-" + m + "'>Jump back.</a>" : ""; 
+            var prependStringNotes = settings.brackets ? "<span class='footnote-number'>[" + m + "]</span> " : "<span class='footnote-number'>" + m + "</span> ";
+            var appendStringNotes = settings.jumpBack ?  " <a href='#flag-" + m + "'>Jump back.</a>" : ""; 
+            var flagHtml = settings.brackets ? "<a href='#" + noteData[l][0] + "'>[" + m + "]</a>" : "<a href='#" + noteData[l][0] + "'>" + m + "</a>"
             $footnotes.filter('#' + noteData[l][0])
                 .addClass('annotate-footnote')
-                .prepend(prependString)
-                .append(appendString)
+                .prepend(prependStringNotes)
+                .append(appendStringNotes)
                 .appendTo(this);
             $flags.eq(l)
                 .attr('id', 'flag-' + m)
                 .addClass('annotate-flag')
-                .html('<a href="#' + noteData[l][0] + '">' + m + '</a>');
+                .html(flagHtml);
         }
         
         if ( settings.highlight ) {
@@ -45,7 +46,7 @@
                 setTimeout(fadeAway, 500);
                 function fadeAway() {
                     $target.css({
-                        'transition': 'background-color 2s ease',
+                        'transition': 'background-color 4s ease',
                     }).removeAttr('style');
                 }
             });        
@@ -54,6 +55,4 @@
         return this;
     }
 
-}(jQuery));
-
-                
+}(jQuery)); 

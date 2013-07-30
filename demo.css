@@ -14,7 +14,7 @@ html {
 }
 
 body {
-    font-family: linden-hill, serif;
+    font-family: sans-serif;
     padding: 1em;
     color: #333;
 }
@@ -23,11 +23,6 @@ header, section {
     padding-bottom: 1em;
     margin-bottom: 1em;
     border-bottom: 1px solid #999;
-}
-
-header > :last-child, section > :last-child {
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
 }
 
 h1 {
@@ -59,7 +54,7 @@ hr {
     background: #333;
 }
 
-p {
+p, ol, ul, li {
     margin-bottom: 1em;
     line-height: 1.5;
     text-align: justify;
@@ -128,8 +123,11 @@ li {
     border: none;
     cursor: pointer;
     transition: background .2s ease;
+    border-radius: 3px;
 }
-
+#run-annotate:not(:disabled):hover {
+    background: #ff6c35;
+}
 #run-annotate:not(:disabled):active {
     background: #cc3700;
 }
@@ -140,16 +138,8 @@ li {
 }
 
 #footnotes {
-  /*counter-reset: footnote;*/
   list-style-type: none;
 }
-/*#footnotes li:before {*/
-/*  counter-increment: footnote;*/
-/*  content: "[" counter(footnote, decimal) "]";*/
-/*  position: absolute;*/
-/*  left: -2em;*/
-/*  font-weight: bold;*/
-/*  }*/
 
 .footnote-number {
     position: absolute;
@@ -169,16 +159,6 @@ li {
     background-color: #fff09d;
 }
 
-/*#second:hover .magic:after {*/
-/*    position: absolute;*/
-/*    left: calc(50%-5em);*/
-/*    left: -webkit-calc(50%-5em);*/
-/*    width: 10em;*/
-/*    content: "Here's where the magic happens!";*/
-/*    padding: 1em;*/
-/*    background: rgba(0,0,0,.75);*/
-/*    color: white;*/
-/*}*/
-  
-/*#footnotes{counter-reset: footnote; list-style-type: none;}#footnotes li:before {counter-increment: footnote;content: "[" counter(footnote, decimal) "]";position: absolute;left: -2em;font-weight: bold;}*/
-
+.demo {
+    font-family: linden-hill, serif;
+}

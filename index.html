@@ -11,7 +11,6 @@
         <meta name="viewport" content="width=device-width">
         <link rel='stylesheet' href='annotate.css'>
         <link rel='stylesheet' href='demo.css'>
-        <script src="//use.edgefonts.net/french-canon.js"></script>
         <script src="//use.edgefonts.net/linden-hill.js"></script>
     </head>
     
@@ -32,13 +31,15 @@
                 <p>Then later on...</p>
                 <pre id='second'>
 &lt;ol&gt;
-    &lt;li <span class='magic'>id="awesome-footnote"</span>&gt;Here's the footnote associated with the link above.&lt;/li&gt;
+    ...
+    &lt;li <span class='magic'>id="awesome-footnote"</span>&gt;Here's the awesome footnote associated with the link above.&lt;/li&gt;
     ...
 &lt;/ol&gt;</pre>
+                <p>Check out the example below.</p>
             </section>
             
-            <section id='demo'>
-                <button id='run-annotate'>Show me.</button>
+            <section class='demo'>
+                <button id='run-annotate' class='button orange-button'>Show me.</button>
                 <h2>A Scandal in Bohemia</h2>
                 <h3>I.</h3>
                 <p>To Sherlock Holmes<sup data-for-note='sherlock-holmes'></sup> she is always THE woman. I have seldom heard him mention her under any other name. In his eyes she eclipses<sup data-for-note='eclipse'></sup> and predominates the whole of her sex. It was not that he felt any emotion akin to love for Irene Adler. All emotions, and that one particularly, were abhorrent to his cold, precise but admirably balanced mind. He was, I take it, the most perfect reasoning and observing machine that the world has seen<sup data-for-note='reasoning-machine'></sup>, but as a lover he would have placed himself in a false position. He never spoke of the softer passions, save with a gibe<sup data-for-note='gibe-jibe'></sup> and a sneer. They were admirable things for the observer—excellent for drawing the veil from men's motives and actions. But for the trained reasoner to admit such intrusions into his own delicate and finely adjusted temperament was to introduce a distracting factor which might throw a doubt upon all his mental results. Grit in a sensitive instrument, or a crack in one of his own high-power lenses, would not be more disturbing than a strong emotion in a nature such as his. And yet there was but one woman to him, and that woman was the late Irene Adler, of dubious and questionable memory<sup data-for-note='foreboding'></sup>.</p>
@@ -51,7 +52,30 @@
                     <li id="gibe-jibe">Also <i>jibe</i>.</li>
                 </ol>
             </section>
-                
+            
+            <section>
+                <h2>Settings</h2>
+                <p>The default settings are:</p>
+<pre>var settings = $.extend({
+     jumpBack : true,
+     brackets : true,
+     highlight : true,
+     highlightColor : "#fff09d"
+}, options);</pre>
+            <ul>
+                <li><code>jumpBack</code> appends a link to each footnote back to its flag.</li>
+                <li><code>brackets</code> surrounds flags and footnote numbers in brackets.</li>
+                <li><code>highlight</code> changes the background color of a footnote when you jump to it, then gradually fades that color away</li>
+                <li><code>highlightColor</code> defines the color in which footnotes will be highligted (if <code>highlight</code> is <code>true</code>)</li>
+            </section>
+            
+            <section>
+                <h2>To Do</h2>
+                <ul>
+                    <li>Footnote numbers are currently hanging; this should be optional and exposed in settings.</li>
+                    <li>Document the classes the classes the plugin uses.</li>
+                </ul>
+            </section>
         </div>
                         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
